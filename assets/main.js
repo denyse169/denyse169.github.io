@@ -35,8 +35,9 @@ function safeUrl(value) {
   // Optional case studies stay in the reusable project data file.
   if (project.caseStudy && project.caseStudy.length) {
     const details = element('details', 'case-study');
-    const summary = element('summary', '', 'Read case study');
-    summary.setAttribute('aria-label', `Read case study: ${project.title}`);
+    const label = project.caseStudyLabel || 'Read case study';
+    const summary = element('summary', '', label);
+    summary.setAttribute('aria-label', `${label}: ${project.title}`);
     details.append(summary);
     project.caseStudy.forEach(section => {
       const block = element('section', 'case-study-section');
