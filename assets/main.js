@@ -32,6 +32,22 @@ function safeUrl(value) {
   const tags = element('ul', 'chips project-tags');
   project.tags.forEach(text => tags.append(element('li', '', text)));
   card.append(tags);
+  // Optional case studies stay in the reusable project data file.
+  if (project.caseStudy && project.caseStudy.length) {
+    const details = element('details', 'case-study');
+    const summary = element('summary', '', 'Read case study');
+    summary.setAttribute('aria-label', `Read case study: ${project.title}`);
+    details.append(summary);
+    project.caseStudy.forEach(section => {
+      const block = element('section', 'case-study-section');
+      const heading = element('h4', '', section.heading);
+      heading.id = `case-study-${index}-${details.childElementCount}`;
+      block.setAttribute('aria-labelledby', heading.id);
+      block.append(heading, element('p', '', section.text));
+      details.append(block);
+    });
+    card.append(details);
+  }
   const linkUrl = safeUrl(project.url);
   if (linkUrl) {
     const link = element('a', 'project-link', 'View project ↗');

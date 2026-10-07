@@ -5,3 +5,13 @@
 @media(max-width:1050px){.site-header{align-items:flex-start;flex-direction:column;gap:14px}.hero{gap:35px;grid-template-columns:1.3fr 1fr}.hero-note{padding:25px}.about{gap:40px}nav{gap:18px}.section{padding:60px 28px}.projects-section{padding-left:28px;padding-right:28px}.contact-section{margin-left:28px;margin-right:28px}}
 @media(max-width:700px){html{scroll-padding-top:20px}.site-header{padding:18px 22px;flex-direction:row;flex-wrap:wrap;align-items:center;gap:14px}nav{width:100%;gap:12px 20px}.js-enabled .menu-toggle{display:block;background:white;border:1px solid var(--line);border-radius:4px;padding:5px 12px;font-size:.8rem}.js-enabled nav{display:none}.js-enabled nav.is-open{display:flex}.section{padding:50px 22px}.hero{grid-template-columns:1fr;gap:40px}.hero-note{max-width:430px;width:100%;margin:auto;padding:30px}.hero h1{font-size:2.9rem}.hero-note h2{font-size:1.8rem}.about,.credentials{grid-template-columns:1fr;gap:15px}.section-heading{margin-bottom:26px}.experience{grid-template-columns:1fr;gap:14px;padding:24px 0}.project-grid,.skill-groups{grid-template-columns:1fr}.project-card{padding:24px}.skill-groups{gap:26px}.contact-section{margin:25px 16px;padding:45px 22px}footer{flex-direction:column;align-items:flex-start;padding:20px 22px 35px;gap:12px}.education-card{padding:20px}.fact-row{gap:15px}.fact-row strong{font-size:1.6rem}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* Expandable business case studies use the same card palette and typography. */
+.case-study{margin-top:24px;border-top:1px solid var(--line);padding-top:18px}
+.case-study summary{cursor:pointer;color:var(--olive);font-size:.87rem;font-weight:700;padding:5px 0}
+.case-study summary:focus-visible{outline:3px solid var(--clay);outline-offset:5px}
+.case-study[open] summary{margin-bottom:20px}
+.case-study-section{margin-top:20px}
+.case-study-section h4{font-size:.9rem;line-height:1.5;margin:0 0 8px}
+.case-study-section p{font-size:.87rem;color:var(--muted);margin-bottom:0}
+.project-grid{align-items:start}

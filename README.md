@@ -43,6 +43,19 @@ Edit only `assets/projects.js`. Copy a complete object in `window.portfolioProje
 
 Keep strings in quotes and escape any double quotes inside them with `\"`. Leave `url` empty to omit the project link. Local files use paths like `assets/case-study.pdf`, without a leading slash. Text is rendered as plain text; do not add HTML inside project values. Refresh the browser after saving.
 
+### Add a written case study
+
+A project can include an optional `caseStudy` list in `assets/projects.js`. Each item has `heading` and `text` fields. The card automatically adds an accessible “Read case study” disclosure; readers can expand it without leaving the portfolio.
+
+```js
+caseStudy: [
+  { heading: "Project Overview", text: "A concise overview." },
+  { heading: "My Contribution", text: "Your verified individual contribution." }
+]
+```
+
+Separate team outputs from individual contributions. Label proposed benefits as expected rather than achieved. The IKEA case is a team-developed strategy analysis, not a client engagement or implemented solution. Its source presentation is not included, displayed, or linked in the website. Edit the written project data to refine the case study; do not upload the source presentation to the site.
+
 ## Change images and colors
 
 The default design uses a lightweight CSS illustration and needs no photos. For a project image, add a compressed JPG, WebP, or PNG to `assets/`, then set that project's `image` and `imageAlt`. Aim for an image under 200 KB and around 1000 pixels wide. Project images are cropped to the card width and loaded lazily.
