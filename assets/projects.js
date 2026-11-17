@@ -21,6 +21,22 @@ window.portfolioProjects = [
     imageAlt: ""
   },
   {
+    title: "100 Million Learners: Global Learner Market Research",
+    category: "Thunderbird student consulting project · In progress",
+    focus: ["Business Analysis", "Project Management"],
+    summary: "The 100 Million Learners initiative aims to expand access to world-class entrepreneurship, leadership, and business education for learners around the world. Our team is researching markets across Africa, Asia, and Latin America to learn how learners in different regions discover, evaluate, and engage with online education.",
+    contributions: [
+      "Co-lead the student consulting team, coordinating the work and keeping the project on track.",
+      "Lead research on the Sub-Saharan Africa region: learner motivations, messaging, visual storytelling, and social media engagement.",
+      "Help build the presentation slides that turn the research into clear recommendations.",
+      "The team will deliver regional insights and country-specific recommendations for priority markets to inform future organic and paid marketing that raises awareness, engagement, and enrollment."
+    ],
+    tags: ["Market Research", "Team Leadership", "Sub-Saharan Africa", "Learner Insights", "Storytelling"],
+    url: "",
+    image: "",
+    imageAlt: ""
+  },
+  {
     title: "Siemens Mobility Project Manager Job Simulation",
     category: "Forage job simulation · Nov 2026",
     focus: ["Project Management", "Data Analysis"],
