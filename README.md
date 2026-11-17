@@ -11,18 +11,13 @@ A responsive, single-page portfolio for business operations, business analysis, 
 
 ## Update your information
 
-Open `index.html` and look for the comments labeled BIOGRAPHY, EXPERIENCE, SKILLS, CERTIFICATIONS, LINKS / RESUME, and CONTACT. Replace the “Professional Portfolio” labels with your name and update the page title and description in the `<head>`. Edit text between HTML tags, keeping the tags intact. Add only verified dates, credentials, and responsibilities.
+Open `index.html` and look for the comments labeled HERO, IMPACT NUMBERS, ABOUT, FOCUS AREAS, APPROACH, EXPERIENCE, PROJECTS, SKILLS, EDUCATION & CERTIFICATIONS, and CONTACT. Edit text between HTML tags, keeping the tags intact. Add only verified dates, credentials, and responsibilities.
 
-Personal URLs and contact details are intentionally absent. Disabled buttons identify where information is still needed. Replace a disabled button with a real link once you have the correct URL:
+The LinkedIn and GitHub links are in the hero and contact sections. To add a resume, put it at `assets/resume.pdf` and add `<li><a href="assets/resume.pdf">Resume ↗</a></li>` to the `hero-links` list. To add an email button, add `<a class="button secondary" href="mailto:YOUR_EMAIL">Email me</a>` in the contact section. Anything you add here is public.
 
-```html
-<a class="button secondary" href="YOUR_ACTUAL_LINKEDIN_URL">LinkedIn</a>
-<a class="button secondary" href="YOUR_ACTUAL_GITHUB_URL">GitHub</a>
-<a class="button secondary" href="assets/resume.pdf">Resume</a>
-<a class="button primary" href="mailto:YOUR_ACTUAL_EMAIL">Email me</a>
-```
+## Navigation
 
-Replace every uppercase placeholder before publishing those links. The Contact button already navigates to the contact section; update the disabled contact-details button there. Put your resume at `assets/resume.pdf`. Remember that files and contact details on this site will be public. Links open in the same tab by default.
+The header stays at the top while visitors scroll and highlights the section they are reading. On phones it collapses into a Menu button. A progress bar shows how far down the page the reader is, and a back-to-top button appears after scrolling. If you add a section, give it an `id` and add a matching `<a href="#id">` link inside `<nav>`.
 
 ## Add future projects
 
@@ -54,7 +49,9 @@ caseStudy: [
 ]
 ```
 
-Separate team outputs from individual contributions. Label proposed benefits as expected rather than achieved. The IKEA case is a team-developed strategy analysis, not a client engagement or implemented solution. Its source presentation is not included, displayed, or linked in the website. Edit the written project data to refine the case study; do not upload the source presentation to the site.
+Separate team outputs from individual contributions. Label proposed benefits as expected rather than achieved.
+
+Each project's `focus` list (for example `["Data Analysis", "Process Improvement"]`) creates the filter buttons above the project grid. Reuse existing focus names so the filters stay tidy.
 
 ## Change images and colors
 

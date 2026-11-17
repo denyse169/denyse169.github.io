@@ -1,5 +1,7 @@
 /* Cards use textContent so project text is displayed safely as plain text. */
 const grid = document.querySelector('#project-grid');
+const projects = window.portfolioProjects || [];
+
 function element(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -13,8 +15,11 @@ function safeUrl(value) {
     return ['https:', 'http:'].includes(url.protocol) ? url.href : null;
   } catch { return null; }
 }
-(window.portfolioProjects || []).forEach((project, index) => {
+
+/* ---------- Project cards ---------- */
+const cards = projects.map((project, index) => {
   const card = element('article', 'project-card');
+  card.dataset.focus = (project.focus || []).join('|');
   const imageUrl = safeUrl(project.image);
   if (imageUrl) {
     const image = element('img', 'project-image');
@@ -27,22 +32,21 @@ function safeUrl(value) {
   card.append(element('p', 'eyebrow', `${String(index + 1).padStart(2, '0')} / ${project.category}`));
   card.append(element('h3', '', project.title), element('p', 'project-summary', project.summary));
   const list = element('ul', 'contributions');
-  project.contributions.forEach(text => list.append(element('li', '', text)));
+  (project.contributions || []).forEach(text => list.append(element('li', '', text)));
   card.append(list);
   const tags = element('ul', 'chips project-tags');
-  project.tags.forEach(text => tags.append(element('li', '', text)));
+  (project.tags || []).forEach(text => tags.append(element('li', '', text)));
   card.append(tags);
-  // Optional case studies stay in the reusable project data file.
   if (project.caseStudy && project.caseStudy.length) {
     const details = element('details', 'case-study');
     const label = project.caseStudyLabel || 'Read case study';
     const summary = element('summary', '', label);
     summary.setAttribute('aria-label', `${label}: ${project.title}`);
     details.append(summary);
-    project.caseStudy.forEach(section => {
+    project.caseStudy.forEach((section, i) => {
       const block = element('section', 'case-study-section');
       const heading = element('h4', '', section.heading);
-      heading.id = `case-study-${index}-${details.childElementCount}`;
+      heading.id = `case-study-${index}-${i}`;
       block.setAttribute('aria-labelledby', heading.id);
       block.append(heading, element('p', '', section.text));
       details.append(block);
@@ -57,7 +61,33 @@ function safeUrl(value) {
     card.append(link);
   }
   grid.append(card);
+  return card;
 });
+
+/* ---------- Project filters ---------- */
+const filterBar = document.querySelector('#project-filters');
+const filterStatus = document.querySelector('#filter-status');
+const focusValues = [...new Set(projects.flatMap(p => p.focus || []))];
+if (filterBar && focusValues.length) {
+  ['All', ...focusValues].forEach(value => {
+    const button = element('button', 'filter', value);
+    button.type = 'button';
+    button.setAttribute('aria-pressed', String(value === 'All'));
+    button.addEventListener('click', () => {
+      filterBar.querySelectorAll('.filter').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      let shown = 0;
+      cards.forEach(card => {
+        const match = value === 'All' || card.dataset.focus.split('|').includes(value);
+        card.hidden = !match;
+        if (match) shown++;
+      });
+      filterStatus.textContent = `Showing ${shown} project${shown === 1 ? '' : 's'}${value === 'All' ? '' : ` in ${value}`}.`;
+    });
+    filterBar.append(button);
+  });
+}
+
+/* ---------- Mobile menu ---------- */
 const toggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#navigation');
 toggle.hidden = false;
@@ -80,3 +110,39 @@ document.addEventListener('keydown', event => {
     toggle.focus();
   }
 });
+
+/* ---------- Active section highlighting ---------- */
+const navLinks = [...navigation.querySelectorAll('a[href^="#"]')];
+const sections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+function updateActive() {
+  const offset = window.innerHeight * 0.3;
+  let current = null;
+  sections.forEach(section => {
+    if (section.getBoundingClientRect().top - offset <= 0) current = section.id;
+  });
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) current = sections[sections.length - 1].id;
+  navLinks.forEach(link => {
+    const active = link.getAttribute('href') === `#${current}`;
+    link.classList.toggle('is-active', active);
+    if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
+  });
+}
+
+/* ---------- Scroll progress + back to top ---------- */
+const bar = document.querySelector('.progress span');
+const toTop = document.querySelector('.to-top');
+function onScroll() {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  if (bar) bar.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+  if (toTop) toTop.classList.toggle('is-visible', window.scrollY > 600);
+  updateActive();
+}
+let ticking = false;
+window.addEventListener('scroll', () => {
+  if (!ticking) {
+    requestAnimationFrame(() => { onScroll(); ticking = false; });
+    ticking = true;
+  }
+}, { passive: true });
+window.addEventListener('resize', onScroll);
+onScroll();
