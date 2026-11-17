@@ -55,9 +55,9 @@ Each project's `focus` list (for example `["Data Analysis", "Process Improvement
 
 ## Change images and colors
 
-The default design uses a lightweight CSS illustration and needs no photos. For a project image, add a compressed JPG, WebP, or PNG to `assets/`, then set that project's `image` and `imageAlt`. Aim for an image under 200 KB and around 1000 pixels wide. Project images are cropped to the card width and loaded lazily.
+For a project image, add a compressed JPG, WebP, or PNG to `assets/`, then set that project's `image` and `imageAlt`. Aim for an image under 200 KB and around 1000 pixels wide. Project images are cropped to the card width and loaded lazily.
 
-To add a personal photo, insert an `<img src="assets/portrait.jpg" alt="YOUR_NAME" width="400" height="400">` in `index.html` and style it in `assets/styles.css`. Replace the placeholder name. Avoid large original images. Change the color variables at the top of `assets/styles.css` while preserving readable text contrast.
+Your headshot is `assets/denyse-tumugire.jpg`, shown at the top of the page. To change it, replace that file with a compressed JPG of a similar shape (about 720 × 830 pixels). Change the color variables at the top of `assets/styles.css` while preserving readable text contrast.
 
 ## Preview and check
 

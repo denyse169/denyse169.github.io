@@ -71,10 +71,11 @@ nav a.nav-cta:hover, nav a.nav-cta.is-active { background: var(--olive-dark); co
 .hero-links { list-style: none; padding: 0; margin: 0; display: flex; gap: 22px; font-size: .86rem; font-weight: 700; }
 .hero-links a { color: var(--clay); text-decoration: none; }
 .hero-links a:hover { text-decoration: underline; }
-.hero-note { background: linear-gradient(180deg, #f8e6cc, var(--sand)); box-shadow: var(--shadow); padding: 34px; border-radius: 160px 160px 12px 12px; }
+.hero-note { background: linear-gradient(180deg, #f8e6cc, var(--sand)); box-shadow: var(--shadow); padding: 18px 18px 30px; border-radius: 160px 160px 12px 12px; }
 .hero-note h2 { font-size: 1.75rem; }
 .hero-note p:not(.eyebrow) { font-size: .88rem; color: var(--muted); }
 .hero-note .eyebrow { margin-top: 24px; margin-bottom: 12px; }
+.hero-note > :not(.portrait) { margin-left: 14px; margin-right: 14px; }
 .orbit { height: 175px; max-width: 250px; margin: 5px auto 20px; position: relative; display: flex; align-items: center; justify-content: center; border: 1px solid #c9bfa9; border-radius: 50%; transform: rotate(-15deg); }
 .orbit:before { content: ''; position: absolute; width: 145px; height: 145px; border: 1px solid #c9bfa9; border-radius: 50%; transform: rotate(15deg); }
 .orbit:after { content: ''; position: absolute; width: 46px; height: 46px; border-radius: 50%; background: radial-gradient(circle, var(--ochre), var(--clay)); opacity: .85; }
@@ -194,6 +195,7 @@ footer p { margin: 0; }
 .to-top:hover { background: var(--olive-dark); }
 
 /* ---------- Warm personal touches ---------- */
+.portrait { display: block; width: 100%; height: auto; aspect-ratio: 720 / 828; object-fit: cover; border-radius: 140px 140px 12px 12px; margin-bottom: 4px; background: #e9e4dc; }
 .greeting { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--brown); margin-bottom: 10px; }
 .hero-note blockquote { margin: 0 0 18px; padding-left: 14px; border-left: 3px solid var(--ochre); font-family: var(--serif); font-style: italic; color: var(--brown); font-size: .98rem; line-height: 1.5; }
 .beyond .life-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
