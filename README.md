@@ -13,7 +13,7 @@ A responsive, single-page portfolio for business operations, business analysis, 
 
 Open `index.html` and look for the comments labeled HERO, IMPACT NUMBERS, ABOUT, FOCUS AREAS, APPROACH, EXPERIENCE, PROJECTS, SKILLS, EDUCATION & CERTIFICATIONS, and CONTACT. Edit text between HTML tags, keeping the tags intact. Add only verified dates, credentials, and responsibilities.
 
-The LinkedIn and GitHub links are in the hero and contact sections. To add a resume, put it at `assets/resume.pdf` and add `<li><a href="assets/resume.pdf">Resume ↗</a></li>` to the `hero-links` list. To add an email button, add `<a class="button secondary" href="mailto:YOUR_EMAIL">Email me</a>` in the contact section. Anything you add here is public.
+The LinkedIn link is in the hero and contact sections. To add a resume, put it at `assets/resume.pdf` and add `<li><a href="assets/resume.pdf">Resume ↗</a></li>` to the `hero-links` list. To add an email button, add `<a class="button secondary" href="mailto:YOUR_EMAIL">Email me</a>` in the contact section. Anything you add here is public.
 
 ## Navigation
 
