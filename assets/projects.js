@@ -94,6 +94,21 @@ window.portfolioProjects = [
     ]
   },
   {
+    title: "CRM Sales Pipeline Dashboard",
+    category: "Maven Analytics guided project · Nov 2025",
+    focus: ["Data Analysis"],
+    summary: "I cleaned and analyzed 6,700+ closed CRM sales opportunities for a B2B computer hardware company, then built an interactive dashboard that sales managers can use to track their team's quarterly performance.",
+    contributions: [
+      "Summarized won and lost deals by quarter and by sales agent with pivot tables.",
+      "Built an interactive dashboard with regional office and manager filters, KPI cards, win rate, and agent performance charts.",
+      "Found an overall win rate of 63% (4,238 won vs. 2,473 lost) and a top agent who won about 2.5 times the team average."
+    ],
+    tags: ["Google Sheets", "Pivot Tables", "Dashboards", "Sales Analytics", "Guided Project"],
+    url: "dashboards/#crm-sales",
+    image: "",
+    imageAlt: ""
+  },
+  {
     title: "Walmart Area Manager Job Simulation",
     category: "Forage job simulation · Mar 2026",
     focus: ["Operations", "Data Analysis"],

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dashboards built by Denyse Tumugire in Power BI and Google Sheets: delivery performance and CRM sales pipeline analysis.">
+  <title>Dashboards | Denyse Tumugire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script defer src="../assets/dashboards.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../#home"><span class="brand-mark" aria-hidden="true">DT</span> Denyse Tumugire</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navigation" hidden>Menu</button>
+      <nav id="navigation" aria-label="Main navigation">
+        <a href="../#about">About</a>
+        <a href="../#focus">Focus</a>
+        <a href="../#approach">Approach</a>
+        <a href="../#experience">Experience</a>
+        <a href="../#projects">Projects</a>
+        <a href="./" class="is-active" aria-current="page">Dashboards</a>
+        <a href="../#skills">Skills</a>
+        <a href="../#credentials">Education</a>
+        <a href="../#beyond">Beyond work</a>
+        <a href="../#contact" class="nav-cta">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section dash-intro" aria-labelledby="dashboards-title">
+      <p class="eyebrow">Dashboards</p>
+      <h1 id="dashboards-title">Dashboards I’ve built.</h1>
+      <p class="intro">Each dashboard turns raw operational or sales data into numbers a manager can act on. Open a dashboard to view the full PDF, or download it.</p>
+    </section>
+
+    <section class="section dash-list" aria-label="Dashboard projects">
+      <!-- DASHBOARD: Copy an <article class="dash-card"> to add another dashboard. Store files in this folder. -->
+      <article class="dash-card" id="shipright" aria-labelledby="shipright-title">
+        <a class="dash-preview" href="shipright-delivery-dashboard.pdf" target="_blank" rel="noopener">
+          <img src="shipright-delivery-dashboard.png" alt="ShipRight Delivery Performance Dashboard in Power BI, showing KPI cards, delays by reason, delivery performance, resolution time by reason, and late shipments by carrier" width="1600" height="918">
+        </a>
+        <div class="dash-body">
+          <div class="dash-main">
+            <p class="eyebrow">Power BI · Business analyst portfolio project</p>
+            <h2 id="shipright-title">ShipRight Delivery Performance Dashboard</h2>
+            <p class="dash-subtitle">Shipment Delay Process Improvement</p>
+            <p>I analyzed 200 shipment records using Excel and SQL and built an interactive Power BI dashboard, filterable by carrier and delay reason, to track delivery performance, identify delay drivers, and support process improvements. I also completed AS-IS/TO-BE process mapping, root cause analysis, and Jira user stories, acceptance criteria, and UAT test cases.</p>
+            <div class="dash-actions">
+              <a class="button primary" href="shipright-delivery-dashboard.pdf" target="_blank" rel="noopener">View Dashboard<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+              <a class="button secondary" href="shipright-delivery-dashboard.pdf" download>Download PDF</a>
+            </div>
+          </div>
+          <div class="dash-findings">
+            <h3>Key findings</h3>
+            <ul>
+              <li>On-time delivery rate was <strong>74%</strong> (148 of 200); 42 shipments (21%) were late and 10 (5%) failed.</li>
+              <li>Warehouse delays, traffic, and late pickups caused about <strong>two-thirds</strong> of all delays (35 of 52).</li>
+              <li>RoadLink had the most late shipments (<strong>15 of 42</strong>, about 36%); incorrect-address issues took the longest to resolve (221 minutes, about twice the 114-minute average).</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="dash-card" id="crm-sales" aria-labelledby="crm-title">
+        <a class="dash-preview" href="crm-sales-dashboard.pdf" target="_blank" rel="noopener">
+          <img src="crm-sales-dashboard.png" alt="CRM Sales Pipeline Dashboard in Google Sheets, showing quarterly won and lost deals, regional office and manager filters, opportunities won, win rate, and opportunities won by sales agent" width="1600" height="1237" loading="lazy">
+        </a>
+        <div class="dash-body">
+          <div class="dash-main">
+            <p class="eyebrow">Google Sheets · Sales analytics <span class="badge">Guided project</span></p>
+            <h2 id="crm-title">CRM Sales Pipeline Dashboard</h2>
+            <p class="dash-subtitle">Guided project, Maven Analytics · Nov 2025</p>
+            <p>I cleaned and analyzed 6,700+ closed CRM sales opportunities for a B2B computer hardware company with pivot tables, then built an interactive dashboard with regional office and manager filters so sales managers can track their team’s quarterly performance.</p>
+            <div class="dash-actions">
+              <a class="button primary" href="crm-sales-dashboard.pdf" target="_blank" rel="noopener">View Dashboard<span class="visually-hidden"> (PDF, opens in a new tab)</span></a>
+              <a class="button secondary" href="crm-sales-dashboard.pdf" download>Download PDF</a>
+            </div>
+          </div>
+          <div class="dash-findings">
+            <h3>Key findings</h3>
+            <ul>
+              <li>Overall win rate was <strong>63%</strong> (4,238 won vs. 2,473 lost).</li>
+              <li>The top sales agent won <strong>349 deals</strong>, about 2.5 times the team average across 30 agents.</li>
+              <li>Won deals <strong>dropped by 61</strong> from Q3 to Q4.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section contact-section" aria-labelledby="dash-contact-title">
+      <h2 id="dash-contact-title">Want to talk about the analysis behind these?</h2>
+      <p>I’m happy to walk through my approach, the data, and what I’d do next.</p>
+      <a class="button primary" href="https://www.linkedin.com/in/denyse-tumugire">Connect on LinkedIn <svg class="ext" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 9 9 3M4.5 3H9v4.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="../#home">Denyse Tumugire</a>
+    <p>Data · Process · Customer experience</p>
+  </footer>
+</body>
+</html>
