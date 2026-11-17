@@ -1,6 +1,6 @@
 # Professional portfolio
 
-A responsive, single-page portfolio for business operations, business analysis, and digital transformation opportunities. Built with plain HTML, CSS, and JavaScript. No packages, build step, external fonts, or third-party services are required.
+A responsive, single-page portfolio for business operations, business analysis, and digital transformation opportunities. Built with plain HTML, CSS, and JavaScript. No packages or build step are required. Fonts (Playfair Display for headings, Lato for body text) load from Google Fonts; if they can't load, the site falls back to Georgia and Arial. Change them with the `--serif` and `--sans` variables at the top of `assets/styles.css`.
 
 ## Files
 
