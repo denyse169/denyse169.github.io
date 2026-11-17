@@ -196,6 +196,8 @@ footer p { margin: 0; }
 .to-top:hover { background: var(--olive-dark); }
 
 /* ---------- Warm personal touches ---------- */
+.button .ext { margin-left: -4px; }
+.ext { width: .72em; height: .72em; margin-left: 3px; vertical-align: .02em; color: currentColor; }
 .portrait-frame { position: relative; overflow: hidden; border-radius: 999px 999px 0 0; }
 .portrait { display: block; width: 100%; height: auto; aspect-ratio: 720 / 828; object-fit: cover; object-position: center 30%; filter: sepia(.12) saturate(1.05); background: #ece2d2; }
 .greeting { font-family: var(--serif); font-style: italic; font-size: 1.2rem; color: var(--brown); margin-bottom: 10px; }
@@ -220,7 +222,8 @@ footer p { margin: 0; }
 @media (max-width: 900px) {
   :root { --header-h: 64px; }
   .header-inner { flex-wrap: wrap; padding: 10px 20px; gap: 10px; }
-  .js-enabled .menu-toggle { display: block; background: var(--white); border: 1px solid var(--line); border-radius: 6px; padding: 7px 14px; font-size: .85rem; font-weight: 700; cursor: pointer; }
+  .js-enabled .menu-toggle { display: block; margin-left: auto; -webkit-appearance: none; appearance: none; background: var(--clay); color: #fff; border: 1px solid var(--clay); border-radius: 999px; padding: 8px 18px; font-size: .85rem; font-weight: 700; cursor: pointer; }
+  .js-enabled .menu-toggle:hover, .js-enabled .menu-toggle[aria-expanded="true"] { background: var(--brown); border-color: var(--brown); }
   .js-enabled nav { display: none; }
   .js-enabled nav.is-open { display: flex; flex-direction: column; align-items: stretch; width: 100%; padding: 8px 0 12px; }
   .js-enabled nav.is-open a { padding: 11px 14px; font-size: .95rem; border-radius: 6px; }

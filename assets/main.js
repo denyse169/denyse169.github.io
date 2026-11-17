@@ -55,7 +55,7 @@ const cards = projects.map((project, index) => {
   }
   const linkUrl = safeUrl(project.url);
   if (linkUrl) {
-    const link = element('a', 'project-link', 'View project ↗');
+    const link = element('a', 'project-link', 'View project →');
     link.href = linkUrl;
     link.setAttribute('aria-label', `View ${project.title}`);
     card.append(link);
